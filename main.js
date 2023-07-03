@@ -62,7 +62,7 @@ function renderList(productList) {
         />
       </td>
       <td class="product-price">
-      <p>${item.priceItem}</p>
+      <p>${item.priceItem} đ</p>
       <input class="hidden" type="text" name="price" value="10000" />
       </td>
       <td>
