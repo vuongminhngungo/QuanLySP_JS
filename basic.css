@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+h1 {
+  margin: 20px;
+}
+
+input {
+  font-size: 18px;
+  padding: 4px 8px;
+  outline: none;
+  border: 1px solid #b1b3b5;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 50px 0;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: #1a1c21;
+}
+
+button {
+  font-size: 16px;
+  width: 100%;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  color: #fff;
+  background-color: #00ac79;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+}
+
+.product-manage {
+  max-width: 1170px;
+  width: 100%;
+  margin: 50px auto;
+  background-color: #20252c;
+}
+.product-manage form.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-manage form.form .insert-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.product-manage form.form .insert-form .insert-form__row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.product-manage form.form .insert-form .insert-form__row label {
+  flex: 1;
+}
+.product-manage form.form .insert-form .btn-add {
+  padding: 10px 0;
+}
+.product-manage form.form .data-list {
+  width: 1000px;
+}
+.product-manage form.form .data-list input {
+  width: 100%;
+}
+.product-manage form.form .data-list .action-button:hover {
+  text-decoration: underline;
+}
+.product-manage form.form .data-list .edit-button {
+  color: #1c7ed6;
+  margin-right: 8px;
+}
+.product-manage form.form .data-list .delete-button {
+  color: #fa5252;
+}/*# sourceMappingURL=basic.css.map */

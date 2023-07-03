@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./basic.css" />
+    <title>LetDiv</title>
+  </head>
+  <body>
+    <main class="product-manage">
+      <form action="#!" class="form" autocomplete="off">
+        <h1>Quản Lý Sản Phẩm</h1>
+        <section class="insert-form">
+          <div class="insert-form__row">
+            <label for="idProduct">Mã: </label>
+            <input type="text" name="id" id="idProduct" />
+          </div>
+          <div class="insert-form__row">
+            <label for="nameProduct">Tên: </label>
+            <input type="text" name="name" id="nameProduct" />
+          </div>
+          <div class="insert-form__row">
+            <label for="priceProduct">Giá: </label>
+            <input type="number" name="price" id="priceProduct" />
+          </div>
+          <button type="submit" class="btn-add">Lưu</button>
+        </section>
+        <section class="data-list">
+          <table>
+            <thead>
+              <tr>
+                <th width="15%">Mã</th>
+                <th>Tên</th>
+                <th width="15%">Giá</th>
+                <th width="18%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                <td class="product-code">1</td>
+                <td class="product-name">
+                  Amet excepteur nisi consequat fugiat consequat quis et Lorem
+                  ex consectetur minim consectetur.
+                </td>
+                <td class="product-price">20000đ</td>
+                <td>
+                  <a class="action-button edit-button" href="#">Edit</a>
+                  <a class="action-button delete-button" href="#">Delete</a>
+                  <button class="save-button hidden">Lưu</button>
+                  <button class="cancel-button hidden">Quay Lại</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="product-code">2</td>
+                <td class="product-name">
+                  <input
+                    type="text"
+                    name="name"
+                    value="Amet excepteur nisi consequat fugiat consequat quis et Lorem ex consectetur minim consectetur."
+                  />
+                </td>
+                <td class="product-price">
+                  
+                </td>
+                <td>
+                  <a class="action-button edit-button hidden" href="#">Edit</a>
+                  <a class="action-button delete-button hidden" href="#"
+                    >Delete</a
+                  >
+                  <button class="save-button">Lưu</button>
+                  <button class="cancel-button">Quay Lại</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="product-code">3</td>
+                <td class="product-name">
+                  Amet excepteur nisi consequat fugiat consequat quis et Lorem
+                  ex consectetur minim consectetur.
+                </td>
+                <td class="product-price">20000đ</td>
+                <td>
+                  <a class="action-button edit-button" href="#">Edit</a>
+                  <a class="action-button delete-button" href="#">Delete</a>
+                  <button class="save-button hidden">Lưu</button>
+                  <button class="cancel-button hidden">Quay Lại</button>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+        </section>
+      </form>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
