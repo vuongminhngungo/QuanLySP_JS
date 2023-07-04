@@ -62,14 +62,14 @@ function renderList(productList) {
         />
       </td>
       <td class="product-price">
-      <p>${item.priceItem} đ</p>
+      <p>${item.priceItem} </p>
       <input class="hidden" type="text" name="price" value="10000" />
       </td>
       <td>
         <a class="action-button edit-button" href="#"  id=${index}>Edit</a>
         <a class="action-button delete-button" href="#" id=${index}>Delete</a>
-        <button class="save-button hidden">Lưu</button>
-        <button class="cancel-button hidden">Quay Lại</button>
+        <button class="save-button hidden" id=${index}>Lưu</button>
+        <button class="cancel-button hidden" id=${index}>Quay Lại</button>
       </td>
     </tr> `;
     })
@@ -105,16 +105,19 @@ function editProduct(productList) {
   bodyProduct.addEventListener("click", (e) => {
     e.preventDefault();
     const btnEdit = e.target.closest(".edit-button");
-    if (btnEdit) {
-      const itemEdit = e.target.closest("tr");
-      const descNameEdit = itemEdit.querySelector(".product-name p");
-      const inputNameEdit = itemEdit.querySelector(".product-name input");
-      const descPriceEdit = itemEdit.querySelector(".product-price p");
-      const inputPriceEdit = itemEdit.querySelector(".product-price input");
-      const saveEdit = itemEdit.querySelector(".save-button");
-      const cancelEdit = itemEdit.querySelector(".cancel-button");
-      const btnBefore = itemEdit.querySelectorAll(".action-button");
+    const btnSave = e.target.closest(".save-button");
+    const btnCancel = e.target.closest(".cancel-button");
 
+    const itemEdit = e.target.closest("tr");
+    const descNameEdit = itemEdit.querySelector(".product-name p");
+    const inputNameEdit = itemEdit.querySelector(".product-name input");
+    const descPriceEdit = itemEdit.querySelector(".product-price p");
+    const inputPriceEdit = itemEdit.querySelector(".product-price input");
+    const saveEdit = itemEdit.querySelector(".save-button");
+    const cancelEdit = itemEdit.querySelector(".cancel-button");
+    const btnBefore = itemEdit.querySelectorAll(".action-button");
+
+    if (btnEdit) {
       descNameEdit.classList.add("hidden");
       inputNameEdit.classList.remove("hidden");
       // price-edit
@@ -128,56 +131,55 @@ function editProduct(productList) {
       btnBefore.forEach((element) => {
         element.classList.add("hidden");
       });
+    }
+    //
+    else if (btnSave) {
+      const idEdit = parseInt(btnSave.id);
 
-      saveEdit.addEventListener("click", (e) => {
-        e.preventDefault();
-        const idEdit = parseInt(btnEdit.id);
-        if (inputNameEdit.value === "" || inputPriceEdit.value === "") {
-          alert("Vui lòng không để trống");
-          return;
-        } else {
-          alert("Lưu thành công");
-          // name
-          inputNameEdit.classList.add("hidden");
-          descNameEdit.classList.remove("hidden");
-          descNameEdit.textContent = inputNameEdit.value;
-          // price
-          inputPriceEdit.classList.add("hidden");
-          descPriceEdit.classList.remove("hidden");
-          descPriceEdit.textContent = inputPriceEdit.value;
-          // save and cancel
-          saveEdit.classList.add("hidden");
-          cancelEdit.classList.add("hidden");
-          // hidden Before
-          btnBefore.forEach((element) => {
-            element.classList.remove("hidden");
-          });
-        }
-        productList[idEdit].nameItem = inputNameEdit.value;
-        productList[idEdit].priceItem = inputPriceEdit.value;
-        saveData(productList);
-      });
-
-      cancelEdit.addEventListener("click", (e) => {
-        e.preventDefault();
+      if (inputNameEdit.value === "" || inputPriceEdit.value === "") {
+        alert("Vui lòng không để trống");
+        return;
+      } else {
+        alert("Lưu thành công");
         // name
-        inputNameEdit.classList.toggle("hidden");
-        descNameEdit.classList.toggle("hidden");
+        inputNameEdit.classList.add("hidden");
+        descNameEdit.classList.remove("hidden");
         descNameEdit.textContent = inputNameEdit.value;
-
         // price
-        inputPriceEdit.classList.toggle("hidden");
-        descPriceEdit.classList.toggle("hidden");
+        inputPriceEdit.classList.add("hidden");
+        descPriceEdit.classList.remove("hidden");
         descPriceEdit.textContent = inputPriceEdit.value;
-
         // save and cancel
-        saveEdit.classList.toggle("hidden");
-        cancelEdit.classList.toggle("hidden");
-
+        saveEdit.classList.add("hidden");
+        cancelEdit.classList.add("hidden");
         // hidden Before
         btnBefore.forEach((element) => {
-          element.classList.toggle("hidden");
+          element.classList.remove("hidden");
         });
+      }
+      productList[idEdit].nameItem = inputNameEdit.value;
+      productList[idEdit].priceItem = inputPriceEdit.value;
+      saveData(productList);
+    }
+    //
+    else if (btnCancel) {
+      // name
+      inputNameEdit.classList.toggle("hidden");
+      descNameEdit.classList.toggle("hidden");
+      descNameEdit.textContent = inputNameEdit.value;
+
+      // price
+      inputPriceEdit.classList.toggle("hidden");
+      descPriceEdit.classList.toggle("hidden");
+      descPriceEdit.textContent = inputPriceEdit.value;
+
+      // save and cancel
+      saveEdit.classList.toggle("hidden");
+      cancelEdit.classList.toggle("hidden");
+
+      // hidden Before
+      btnBefore.forEach((element) => {
+        element.classList.toggle("hidden");
       });
     }
   });

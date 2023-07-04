@@ -89,18 +89,29 @@ button {
     }
     .data-list {
       width: 1000px;
-      input {
-        width: 100%;
+      td {
+        input {
+          width: 100%;
+        }
+        .action-button:hover {
+          text-decoration: underline;
+        }
+        .edit-button {
+          color: #1c7ed6;
+          margin-right: 8px;
+        }
+        .delete-button {
+          color: #fa5252;
+        }
       }
-      .action-button:hover {
-        text-decoration: underline;
-      }
-      .edit-button {
-        color: #1c7ed6;
-        margin-right: 8px;
-      }
-      .delete-button {
-        color: #fa5252;
+      .product-price {
+        p {
+          &::after {
+            content: "đ";
+            margin-left: 4px;
+            color: #b1b3b5;
+          }
+        }
       }
     }
   }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -97,16 +98,21 @@ button:hover {
 .product-manage form.form .data-list {
   width: 1000px;
 }
-.product-manage form.form .data-list input {
+.product-manage form.form .data-list td input {
   width: 100%;
 }
-.product-manage form.form .data-list .action-button:hover {
+.product-manage form.form .data-list td .action-button:hover {
   text-decoration: underline;
 }
-.product-manage form.form .data-list .edit-button {
+.product-manage form.form .data-list td .edit-button {
   color: #1c7ed6;
   margin-right: 8px;
 }
-.product-manage form.form .data-list .delete-button {
+.product-manage form.form .data-list td .delete-button {
   color: #fa5252;
+}
+.product-manage form.form .data-list .product-price p::after {
+  content: "đ";
+  margin-left: 4px;
+  color: #b1b3b5;
 }/*# sourceMappingURL=basic.css.map */
